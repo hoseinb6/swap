@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenGames Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="application/javascript"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="./zen-logo.png" alt="ZenChain Logo" class="logo">
+                <h1>ZenGames</h1>
+            </div>
+            <div class="wallet-info">
+                <div class="balance-display">
+                    <span id="ztcBalance">0.0000</span> ZTC | <span id="zgtBalance">0.0000</span> ZGT
+                </div>
+                <button id="connectButton">Connect Wallet</button>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn active" data-page="lobby">Lobby</button>
+            <button class="nav-btn" data-page="swap">Swap Tokens</button>
+            <button class="nav-btn" data-page="coinflip">Coin Flip</button>
+        </nav>
+
+        <main id="content-area">
+            <div id="lobby-page" class="page active">
+                <h2>Welcome to the Lobby!</h2>
+                <div class="balance-card">
+                    <h3>Your Game Balance</h3>
+                    <p id="hubBalance">0.0000</p>
+                    <span>ZGT</span>
+                    <div class="deposit-withdraw-form">
+                        <input type="number" id="depositAmount" placeholder="Amount to Deposit/Withdraw">
+                        <div class="button-group">
+                            <button id="depositButton">Deposit</button>
+                            <button id="withdrawButton">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="swap-page" class="page">
+                <h2>Swap Tokens</h2>
+                <div class="swap-card">
+                    <div class="swap-input-group">
+                        <label>From (ZTC)</label>
+                        <input type="number" id="ztcAmountIn" placeholder="0.0">
+                    </div>
+                    <button id="swapZtcButton">Swap ZTC for ZGT</button>
+                </div>
+                <div class="swap-card">
+                    <div class="swap-input-group">
+                        <label>From (ZGT)</label>
+                        <input type="number" id="zgtAmountIn" placeholder="0.0">
+                    </div>
+                    <button id="swapZgtButton">Swap ZGT for ZTC</button>
+                </div>
+            </div>
+
+            <div id="coinflip-page" class="page">
+                <h2>Coin Flip</h2>
+                <div class="game-card">
+                    <div id="coin" class="coin-visual">
+                        <div class="heads"><img src="./zenchain_logo_heads.png" alt="Heads"></div>
+                        <div class="tails"><img src="./zenchain_text_tails.png" alt="Tails"></div>
+                    </div>
+                    <div class="game-controls">
+                        <label for="coinFlipBetAmount">Bet Amount (ZGT)</label>
+                        <input type="number" id="coinFlipBetAmount" placeholder="Amount">
+                        <div class="button-group">
+                            <button id="betHeadsButton">Bet on Heads</button>
+                            <button id="betTailsButton">Bet on Tails</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
